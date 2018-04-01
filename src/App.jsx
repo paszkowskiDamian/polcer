@@ -2,12 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import { FirebaseProvider, FirebaseContext } from './components/FirebaseProvider'
+import { Home } from './pages/Home'
 import { config } from './firebase.config'
-
-
-const Ctx = () => <FirebaseContext.Consumer>{(context) => <div>context{console.log(context)}</div>}</FirebaseContext.Consumer>
-
-const Sample = () => <div><Ctx /></div>
 
 const Category = (props) => <div>Product {props.match.params.category}</div>
 
@@ -18,7 +14,7 @@ class AppComponent extends Component {
     return (
       <BrowserRouter >
         <Switch>
-          <Route path="/" exact component={Sample} />
+          <Route path="/" exact component={Home} />
           <Route path="/kategoria/:category" component={Category} />
           <Route component={NotFound} />
         </Switch>
