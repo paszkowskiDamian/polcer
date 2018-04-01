@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
-import { FirebaseProvider, FirebaseContext } from './components/FirebaseProvider'
+import { FirebaseProvider } from './components/FirebaseProvider'
 import { Home } from './pages/Home'
 import { config } from './firebase.config'
+
+import './styles/style.css'
 
 const Category = (props) => <div>Product {props.match.params.category}</div>
 

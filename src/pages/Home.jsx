@@ -4,10 +4,11 @@ import { FirebaseConnect } from '../components/FirebaseProvider'
 import { Header } from './sections/Header'
 
 const HomeComponent = (props) => (
-    <div>
-        {console.log(props)}
-        <Header />
-    </div>
+    props.isLoading
+        ? <div>loading...</div>
+        : <div>
+            <Header highlights={props.data.highlights} />
+        </div>
 )
 
 export const Home = FirebaseConnect()(HomeComponent)
