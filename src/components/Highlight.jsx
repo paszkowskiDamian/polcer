@@ -15,9 +15,11 @@ const Image = glamorous.div((props) => ({
     alignItems: 'center',
 }), pagePadding)
 
-export const Highlight = ({ highlight }) => (
+export const Highlight = ({ highlight, isActive, willBeActive }) => (
     <Image image={highlight.image}>
         <Card
+            isActive={isActive}
+            willBeActive={willBeActive}
             header={highlight.header}
             description={highlight.description}
             link={'link'} />
@@ -31,5 +33,7 @@ export const HighlightProps = PropTypes.shape({
 })
 
 Highlight.propTypes = {
-    highlight: HighlightProps
+    highlight: HighlightProps,
+    isActive: PropTypes.bool.isRequired,
+    willBeActive: PropTypes.bool.isRequired,
 }

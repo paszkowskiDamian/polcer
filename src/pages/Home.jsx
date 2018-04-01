@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { FirebaseConnect } from '../components/FirebaseProvider'
-import { Header } from './sections/Header'
+import { Header } from '../sections/Header'
 
 const HomeComponent = (props) => (
     props.isLoading
