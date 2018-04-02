@@ -2,17 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import glamorous from 'glamorous'
 
-import { HeaderLine } from '../components/HeadLine'
 import { Offer } from '../components/Offer'
 import { SectionHeader } from '../components/SectionHeader'
 import { SectionWrapper } from '../components/SectionWrapper'
-import { pagePadding, mediaQueries } from '../styles'
-
-const Description = glamorous.p({
-    width: '40%',
-    minWidth: 380,
-    textAlign: 'center',
-})
+import { mediaQueries } from '../styles'
 
 const OfferWrapper = glamorous.div({
     display: 'flex',

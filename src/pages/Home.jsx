@@ -3,13 +3,16 @@ import React from 'react'
 import { FirebaseConnect } from '../components/FirebaseProvider'
 import { Header } from '../sections/Header'
 import { About } from '../sections/About'
+import { Products } from '../sections/Products'
 
-const HomeComponent = (props) => (
-    props.isLoading
+const HomeComponent = ({ isLoading, data }) => (
+    isLoading
         ? <div>loading...</div>
         : <div>
-            <Header highlights={props.data.highlights} />
-            <About about={props.data.about} />
+            {console.log(data)}
+            <Header highlights={data.highlights} />
+            <About about={data.about} />
+            <Products />
         </div>
 )
 
