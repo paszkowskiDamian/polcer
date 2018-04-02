@@ -9,10 +9,10 @@ import { Map } from '../sections/Map'
 const HomeComponent = ({ isLoading, data }) => (
     <Fragment>
         <Header highlights={data.highlights} />
-        <About about={data.about} />
+        < About about={data.about} />
         <Products products={data.categories} />
         <Map />
-    </Fragment>
+    </Fragment >
 )
 
 export const Home = FirebaseConnect()(HomeComponent)

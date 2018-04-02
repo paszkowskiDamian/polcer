@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 
 import { FirebaseConnect } from '../components/FirebaseProvider'
 import { SectionWrapper } from '../components/SectionWrapper'
