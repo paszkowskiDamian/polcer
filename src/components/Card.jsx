@@ -4,6 +4,7 @@ import glamorous from 'glamorous'
 import PropTypes from 'prop-types'
 import tinycolor from 'tinycolor2'
 
+import { HeaderLine } from './HeadLine'
 import { style, mediaQueries } from '../styles'
 
 const Wrapper = glamorous.div(props => ({
@@ -24,17 +25,14 @@ const Wrapper = glamorous.div(props => ({
     },
 }))
 
-const Header = glamorous.h2({
-    color: style.colors.black,
-})
-
 const CallToAction = glamorous(Link)({
+    cursor: 'pointer',
     color: style.colors.gold
 })
 
 export const Card = ({ header, description, link, isActive, willBeActive }) => (
     <Wrapper isActive={isActive} willBeActive={willBeActive}>
-        <Header>{header.toUpperCase()}</Header>
+        <HeaderLine>{header.toUpperCase()}</HeaderLine>
         <p>{description}</p>
         <CallToAction to={`/kategoria/${link}`}>Zobacz więcej</CallToAction>
     </Wrapper>
