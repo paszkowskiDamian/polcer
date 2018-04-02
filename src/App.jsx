@@ -3,11 +3,10 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import { FirebaseProvider } from './components/FirebaseProvider'
 import { Home } from './pages/Home'
+import { Category } from './pages/Category'
 import { config } from './firebase.config'
 
 import './styles/style.css'
-
-const Category = (props) => <div>Product {props.match.params.category}</div>
 
 const NotFound = () => <div>404</div>
 

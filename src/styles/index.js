@@ -20,17 +20,32 @@ export const mediaQueries = {
     panoramic: '@media only screen and (min-width: 1300px)',
 }
 
+export const dynamicLayout = {
+    phone: {
+        pagePadding: 50,
+    },
+    tablet: {
+        pagePadding: 100,
+    },
+    desktop: {
+        pagePadding: 150,
+    },
+    panoramic: {
+        pagePadding: 200,
+    },
+}
+
 export const pagePadding = {
     [mediaQueries.desktop]: {
-        padding: '0 150px',
+        padding: `0 ${dynamicLayout.desktop.pagePadding}px`,
     },
     [mediaQueries.tablet]: {
-        padding: '0 100px',
+        padding: `0 ${dynamicLayout.tablet.pagePadding}px`,
     },
     [mediaQueries.phone]: {
-        padding: '0 50px',
+        padding: `0 ${dynamicLayout.phone.pagePadding}px`,
     },
     [mediaQueries.panoramic]: {
-        padding: '0 200px',
+        padding: `0 ${dynamicLayout.panoramic.pagePadding}px`,
     }
 }

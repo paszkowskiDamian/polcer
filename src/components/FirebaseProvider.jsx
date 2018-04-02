@@ -41,8 +41,14 @@ export const FirebaseProvider = config => Component => class extends PureCompone
     }
 }
 
-export const FirebaseConnect = (mapStoreToProps = ctx => ctx) => Component => (props) => (
-    <FirebaseContext.Consumer>
-        {(context) => <Component {...props} {...mapStoreToProps(context)} />}
-    </FirebaseContext.Consumer>
-)
+export const FirebaseConnect = (mapStoreToProps = ctx => ctx) => Component => (props) => {
+    const Loader = props.Loader ? props.Loader : () => <div>is Loading...</div>
+
+    return (
+        <FirebaseContext.Consumer>
+            {(context) => !context.isLoading
+                ? <Component {...props} {...mapStoreToProps(context)} />
+                : <Loader />}
+        </FirebaseContext.Consumer>
+    )
+}

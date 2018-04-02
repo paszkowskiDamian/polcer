@@ -20,10 +20,12 @@ export class Header extends Component {
                 <Carousel
                     afterChange={this.afterChange}
                     beforeChange={this.beforeChange}
+                    focusOnSelect
+                    lazyLoad={'progressive'}
                     effect="fade"
                     autoplay
-                    autoplaySpeed={7000}
-                    speed={1000}>
+                    autoplaySpeed={5000}
+                    speed={600}>
                     {this.props.highlights.map((highlight, i) => (
                         <div key={highlight.header}>
                             <Highlight

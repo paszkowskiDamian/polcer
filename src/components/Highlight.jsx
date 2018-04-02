@@ -16,7 +16,7 @@ const Image = glamorous.div((props) => ({
 }), pagePadding)
 
 export const Highlight = ({ highlight, isActive, willBeActive }) => (
-    <Image image={highlight.image}>
+    <Image image={highlight.image} isActive>
         <Card
             isActive={isActive}
             willBeActive={willBeActive}

@@ -3,11 +3,15 @@ import PropTypes from 'prop-types'
 import glamorous from 'glamorous'
 
 import { HeaderLine } from './HeadLine'
+import { mediaQueries } from '../styles'
 
 const Description = glamorous.p({
     width: '40%',
-    minWidth: 380,
+    minWidth: 320,
     textAlign: 'center',
+    [mediaQueries.phone]: {
+        width: '100%',
+    }
 })
 
 export const SectionHeader = ({ title, description }) => (

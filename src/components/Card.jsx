@@ -11,6 +11,7 @@ const Wrapper = glamorous.div(props => ({
     position: 'relative',
     bottom: props.willBeActive ? 0 : -100,
     opacity: props.willBeActive ? 1 : 0,
+    zIndex: props.isActive ? 1 : 0,
     transition: '1s ease-in-out',
     transitionDelay: props.willBeActive ? '0.5s' : 0,
     background: tinycolor(style.colors.white).setAlpha(0.8).toRgbString(),

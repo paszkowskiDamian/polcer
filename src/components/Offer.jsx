@@ -15,15 +15,15 @@ const Wrapper = glamorous.div({
     '&:last-child': {
         paddingRight: 0,
     },
-    [mediaQueries.phone]: {
+    [mediaQueries.tablet]: {
         padding: 0,
     }
 })
 
 const Badge = glamorous.div({
     margin: 20,
-    width: 50,
-    height: 50,
+    width: 70,
+    height: 70,
     background: style.colors.lightGray,
     borderRadius: '50%',
 })
