@@ -4,6 +4,8 @@ import glamorous from 'glamorous'
 
 import { mediaQueries, style, removeLinkStyles } from '../styles'
 
+const collapseMediaQuery = mediaQueries.phone
+
 const Wrapper = glamorous.div({
     alignSelf: 'flex-start',
     width: '30%',
@@ -11,7 +13,7 @@ const Wrapper = glamorous.div({
     display: 'flex',
     alignItems: 'flex-start',
     justifyContent: 'space-between',
-    [mediaQueries.tablet]: {
+    [collapseMediaQuery]: {
         flexDirection: 'column',
     }
 })
@@ -22,7 +24,7 @@ const StyledLink = glamorous(Link)({
     '&:hover': {
         color: style.colors.gold,
     },
-    [mediaQueries.tablet]: {
+    [collapseMediaQuery]: {
         padding: '10px 0',
     }
 }, removeLinkStyles)

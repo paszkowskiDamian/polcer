@@ -15,6 +15,7 @@ class CategoryComponent extends Component {
 
     static deriveCurrentCategory(nextProps) {
         const categoryName = nextProps.match.params.category.toLowerCase()
+
         return nextProps.data.categories
             .find(category => category.name.toLowerCase() === categoryName)
     }
@@ -25,7 +26,6 @@ class CategoryComponent extends Component {
 
     static getDerivedStateFromProps(nextProps, prevState) {
         const currentCategory = CategoryComponent.deriveCurrentCategory(nextProps)
-
         if (currentCategory) {
             const products = CategoryComponent.deriveProductsToShow(
                 nextProps.data.products,

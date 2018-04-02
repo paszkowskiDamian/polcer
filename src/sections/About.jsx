@@ -15,8 +15,8 @@ const OfferWrapper = glamorous.div({
     },
 })
 
-export const About = ({ about }) => (
-    <SectionWrapper>
+export const About = ({ about, id }) => (
+    <SectionWrapper id={id}>
         <SectionHeader title="Oferta" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, eos repellendus ad iure consequatur maxime beatae, iusto nostrum debitis praesentium commodi animi corporis nulla voluptatum quibusdam perspiciatis soluta amet sint?" />
         <OfferWrapper>
             {about.map((description, i) => <Offer key={i} description={description} />)}
@@ -25,5 +25,6 @@ export const About = ({ about }) => (
 )
 
 About.propTypes = {
-    about: PropTypes.arrayOf(PropTypes.string).isRequired
+    about: PropTypes.arrayOf(PropTypes.string).isRequired,
+    id: PropTypes.string,
 }

@@ -8,8 +8,8 @@ import { Gallery } from '../components/Gallery'
 
 
 
-export const Products = ({ products }) => (
-    <SectionWrapper>
+export const Products = ({ products, id }) => (
+    <SectionWrapper id={id}>
         <SectionHeader title="produkty" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias vel ab quo mollitia vitae fugiat odit placeat voluptatibus culpa aperiam quaerat reiciendis expedita iusto laboriosam, tempore laborum sint dicta? Quasi!" />
         <Gallery products={products} linkTo="kategoria" />
     </SectionWrapper>
@@ -18,5 +18,6 @@ export const Products = ({ products }) => (
 Products.propTypes = {
     products: PropTypes.arrayOf(
         PropTypes.shape(ProductProps)
-    ).isRequired
+    ).isRequired,
+    id: PropTypes.string,
 }

@@ -6,7 +6,7 @@ import { HeadLine } from './HeadLine'
 import { removeLinkStyles } from '../styles'
 
 const StyledLink = glamorous(Link)({
-    zIndex: 2,
+    zIndex: 10,
     padding: 5,
 }, removeLinkStyles)
 

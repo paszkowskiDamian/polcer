@@ -25,7 +25,7 @@ const Message = glamorous.p({
 })
 
 const GoBack = glamorous(Link)({
-    color: style.colors.gold
+    color: style.colors.gold,
 })
 
 export const Page404 = () => (

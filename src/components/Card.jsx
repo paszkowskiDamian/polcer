@@ -28,7 +28,11 @@ const Wrapper = glamorous.div(props => ({
 
 const CallToAction = glamorous(Link)({
     cursor: 'pointer',
-    color: style.colors.gold
+    color: style.colors.gold,
+    transition: '0.2s',
+    '&:hover': {
+        color: tinycolor(style.colors.gold).lighten(10).toRgbString(),
+    }
 })
 
 export const Card = ({ header, description, link, isActive, willBeActive }) => (

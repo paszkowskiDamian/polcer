@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+import { HashLink as Link } from 'react-router-hash-link';
 import { Icon } from 'antd'
 import glamorous from 'glamorous'
 
 import { Logo } from './Logo'
-import { pagePadding, dynamicLayout, mediaQueries, style } from '../styles'
+import { pagePadding, dynamicLayout, mediaQueries, style, removeLinkStyles } from '../styles'
 
 const mediaCollapseMenu = mediaQueries.phone
 
@@ -25,7 +26,7 @@ const Nav = glamorous.nav(props => ({
             left: 0,
             background: style.colors.black,
             opacity: props.showMobileNav ? 0.3 : 0,
-            pointerEvents: props.showMobileNav ? 'none' : 'initial',
+            pointerEvents: props.showMobileNav ? 'initial' : 'none',
             transition: '0.3s',
             zIndex: 5,
         }
@@ -54,10 +55,14 @@ const Wrapper = glamorous.div(props => ({
     }
 }))
 
-const MenuItem = glamorous.div({
+const MenuItem = glamorous(Link)({
     width: 100,
+    color: style.colors.black,
     textAlign: 'right',
     cursor: 'pointer',
+    '&:hover': {
+        color: style.colors.gold,
+    },
     [mediaCollapseMenu]: {
         display: 'flex',
         width: '100%',
@@ -68,7 +73,7 @@ const MenuItem = glamorous.div({
             background: style.colors.lightGray,
         }
     }
-})
+}, removeLinkStyles)
 
 const Humbugger = glamorous.div({
     zIndex: 10,
@@ -85,24 +90,36 @@ const Humbugger = glamorous.div({
     }
 })
 
+const menuItems = ['O firmie', 'Produkty', 'Kontakt']
+
+const transformToHash = name => name.toLowerCase().replace(' ', '-')
+
+export const menuHash = menuItems.map(transformToHash)
 export class Navigation extends Component {
     state = {
         showMobileNav: false,
     }
 
-    toggleMenu = () => this.setState(state => ({ showMobileNav: !state.showMobileNav }), () => console.log('hhe'))
+    closeMenu = () => this.setState({ showMobileNav: false })
+
+    toggleMenu = () => this.setState(state => ({ showMobileNav: !state.showMobileNav }))
 
     render() {
         return (
-            <Nav showMobileNav={this.state.showMobileNav}>
+            <Nav showMobileNav={this.state.showMobileNav} >
                 <Logo />
                 <Wrapper showMobileNav={this.state.showMobileNav}>
-                    <MenuItem>O Firmie</MenuItem>
-                    <MenuItem>Produkty</MenuItem>
-                    <MenuItem>Kontakt</MenuItem>
+                    {
+                        menuItems.map(item => <MenuItem
+                            key={item}
+                            onClick={this.closeMenu}
+                            smooth
+                            to={`/#${transformToHash(item)}`}>{item}</MenuItem>)
+                    }
                 </Wrapper>
-                <Humbugger onClick={this.toggleMenu}>
+                <Humbugger>
                     <Icon
+                        onClick={this.toggleMenu}
                         style={{ fontSize: 20 }}
                         type={this.state.showMobileNav ? 'menu-unfold' : 'menu-fold'} />
                 </Humbugger>

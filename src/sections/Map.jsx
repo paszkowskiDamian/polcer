@@ -16,7 +16,7 @@ const mapConfig = {
     styles: mapStyle,
 }
 
-const MapComponent = withScriptjs(withGoogleMap((props) =>
+const MapComponent = withScriptjs(withGoogleMap(() =>
     <GoogleMap
         defaultZoom={12}
         defaultCenter={location}
@@ -49,8 +49,8 @@ const Card = glamorous.div({
     },
 })
 
-export const Map = () => (
-    <Wrapper>
+export const Map = ({ id }) => (
+    <Wrapper id={id}>
         <MapComponent
             googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
             loadingElement={<div style={{ height: `100%` }} />}
