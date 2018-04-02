@@ -1,8 +1,8 @@
 import React from 'react'
 import glamorous from 'glamorous'
 
-import { HeaderLine } from './HeadLine'
-import { style, pagePadding } from '../styles'
+import { Logo } from './Logo'
+import { pagePadding, mediaQueries } from '../styles'
 
 const Nav = glamorous.nav({
     margin: '5px 0',
@@ -16,10 +16,9 @@ const Wrapper = glamorous.div({
     flex: 1,
     display: 'flex',
     justifyContent: 'flex-end',
-})
-
-const Logo = glamorous(HeaderLine)({
-
+    [mediaQueries.phone]: {
+        display: 'none',
+    }
 })
 
 const MenuItem = glamorous.div({
@@ -30,7 +29,7 @@ const MenuItem = glamorous.div({
 
 export const Navigation = () => (
     <Nav>
-        <Logo>POLCER</Logo>
+        <Logo />
         <Wrapper>
             <MenuItem>O Firmie</MenuItem>
             <MenuItem>Produkty</MenuItem>

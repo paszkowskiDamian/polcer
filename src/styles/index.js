@@ -49,3 +49,9 @@ export const pagePadding = {
         padding: `0 ${dynamicLayout.panoramic.pagePadding}px`,
     }
 }
+
+export const removeLinkStyles = {
+    '&:hover, &:visited, &:active, &:focus, &:link': {
+        textDecoration: 'none',
+    }
+}

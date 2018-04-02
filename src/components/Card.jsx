@@ -4,7 +4,7 @@ import glamorous from 'glamorous'
 import PropTypes from 'prop-types'
 import tinycolor from 'tinycolor2'
 
-import { HeaderLine } from './HeadLine'
+import { HeadLine } from './HeadLine'
 import { style, mediaQueries } from '../styles'
 
 const Wrapper = glamorous.div(props => ({
@@ -13,7 +13,7 @@ const Wrapper = glamorous.div(props => ({
     opacity: props.willBeActive ? 1 : 0,
     zIndex: props.isActive ? 1 : 0,
     transition: '1s ease-in-out',
-    transitionDelay: props.willBeActive ? '0.5s' : 0,
+    transitionDelay: props.willBeActive ? '0.8s' : 0,
     background: tinycolor(style.colors.white).setAlpha(0.8).toRgbString(),
     width: 500,
     padding: 20,
@@ -33,16 +33,16 @@ const CallToAction = glamorous(Link)({
 
 export const Card = ({ header, description, link, isActive, willBeActive }) => (
     <Wrapper isActive={isActive} willBeActive={willBeActive}>
-        <HeaderLine>{header.toUpperCase()}</HeaderLine>
+        <HeadLine>{header.toUpperCase()}</HeadLine>
         <p>{description}</p>
-        <CallToAction to={`/kategoria/${link}`}>Zobacz więcej</CallToAction>
+        {link && <CallToAction to={`/kategoria/${link}`}>Zobacz więcej</CallToAction>}
     </Wrapper>
 )
 
 Card.propTypes = {
     header: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    link: PropTypes.string.isRequired,
     isActive: PropTypes.bool.isRequired,
     willBeActive: PropTypes.bool.isRequired,
+    link: PropTypes.string,
 }

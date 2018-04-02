@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import glamorous from 'glamorous'
 
-import { HeaderLine } from './HeadLine'
+import { HeadLine } from './HeadLine'
 
 const Line = glamorous.p({
     margin: 0
@@ -13,7 +13,7 @@ const Block = glamorous.div({
 
 export const ContactInfo = () => (
     <Fragment>
-        <HeaderLine>POLCER</HeaderLine>
+        <HeadLine>POLCER</HeadLine>
         <Block>
             <Line>49-130 Tułowice</Line>
             <Line>ul.Przemysłowa 11</Line>

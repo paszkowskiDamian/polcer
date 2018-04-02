@@ -1,15 +1,16 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import React, { Component, Fragment } from 'react'
 
 import { FirebaseConnect } from '../components/FirebaseProvider'
 import { SectionWrapper } from '../components/SectionWrapper'
 import { Gallery } from '../components/Gallery'
 import { CategoryBanner } from '../components/CategoryBanner'
+import { CategorySelector } from '../components/CategorySelector'
+import { Empty } from '../components/Empty'
 
 class CategoryComponent extends Component {
     state = {
         products: [],
-        currentCategoryName: '',
+        currentCategory: {},
     }
 
     static deriveCurrentCategory(nextProps) {
@@ -30,7 +31,7 @@ class CategoryComponent extends Component {
                 nextProps.data.products,
                 currentCategory.id,
             )
-            return { products, currentCategoryName: currentCategory.name }
+            return { products, currentCategory }
         } else {
             nextProps.history.replace('/404')
 
@@ -38,18 +39,15 @@ class CategoryComponent extends Component {
         }
     }
 
-    constructor(props) {
-        super(props)
-    }
-
-
     render() {
         return (
             <div>
-                <CategoryBanner name={this.state.currentCategoryName} />
+                <CategoryBanner name={this.state.currentCategory.name} />
                 <SectionWrapper>
-                    <Link to="/kategoria/hello">other</Link>
-                    <Gallery products={this.state.products} />
+                    <CategorySelector
+                        categories={this.props.data.categories}
+                        currentCategoryId={this.state.currentCategory.id} />
+                    {this.state.products.length ? <Gallery products={this.state.products} /> : <Empty />}
                 </SectionWrapper>
             </div>
         )

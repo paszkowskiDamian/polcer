@@ -22,10 +22,10 @@ export class Header extends Component {
                     beforeChange={this.beforeChange}
                     focusOnSelect
                     lazyLoad={'progressive'}
-                    effect="fade"
+                    // effect="fade" //does not work properly
                     autoplay
                     autoplaySpeed={5000}
-                    speed={600}>
+                    speed={2000}>
                     {this.props.highlights.map((highlight, i) => (
                         <div key={highlight.header}>
                             <Highlight

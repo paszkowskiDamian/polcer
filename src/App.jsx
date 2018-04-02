@@ -6,10 +6,9 @@ import { Navigation } from './components/Navigation'
 import { Home } from './pages/Home'
 import { Category } from './pages/Category'
 import { config } from './firebase.config'
+import { Page404 } from './components/Page404'
 
 import './styles/style.css'
-
-const NotFound = () => <div>404</div>
 
 class AppComponent extends Component {
   render() {
@@ -20,7 +19,7 @@ class AppComponent extends Component {
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/kategoria/:category" component={Category} />
-            <Route component={NotFound} />
+            <Route component={Page404} />
           </Switch>
         </Fragment>
       </BrowserRouter>

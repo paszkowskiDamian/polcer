@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import glamorous from 'glamorous'
 
-import { HeaderLine } from './HeadLine'
+import { HeadLine } from './HeadLine'
 import { mediaQueries } from '../styles'
 
 const Description = glamorous.p({
@@ -16,7 +16,7 @@ const Description = glamorous.p({
 
 export const SectionHeader = ({ title, description }) => (
     <Fragment>
-        <HeaderLine>{title.toUpperCase()}</HeaderLine>
+        <HeadLine>{title.toUpperCase()}</HeadLine>
         <Description>{description}</Description>
     </Fragment>
 )

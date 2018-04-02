@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import glamorous from 'glamorous'
 
-import { style, mediaQueries } from '../styles'
+import { Description } from './Description'
+import { mediaQueries } from '../styles'
 
-const Wrapper = glamorous(Link)({
+const WrapperFactory = (component) => glamorous(component)({
     width: '32%',
     marginBottom: 20,
     cursor: 'pointer',
@@ -22,23 +23,21 @@ const Image = glamorous.img({
     width: '100%',
 })
 
-const Description = glamorous.p({
-    letterSpacing: '1px',
-    textAlign: 'center',
-    color: style.colors.black,
-})
-
-export const Product = ({ name, image }) => (
-    <Wrapper to={`/kategoria/${name}`}>
-        <Image src={image} alt={name} />
-        <Description>{name.toUpperCase()}</Description>
-    </Wrapper>
-)
+export const Product = ({ name, image, linkTo }) => {
+    const Wrapper = linkTo ? WrapperFactory(Link) : WrapperFactory(glamorous.div())
+    return (
+        <Wrapper to={`/${linkTo}/${name}`}>
+            <Image src={image} alt={name} />
+            <Description>{name.toUpperCase()}</Description>
+        </Wrapper>
+    )
+}
 
 export const ProductProps = {
     name: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
+    linkTo: PropTypes.string
 }
 
 Product.propTypes = ProductProps

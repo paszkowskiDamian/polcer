@@ -12,14 +12,18 @@ const Wrapper = glamorous.div({
     justifyContent: 'space-between',
 })
 
-export const Gallery = ({ products }) => (
+export const Gallery = ({ products, linkTo }) => (
     <Wrapper>
-        {products.map(product => <Product key={product.id} {...product} />)}
+        {products.map(product => <Product
+            key={product.id}
+            {...product}
+            linkTo={linkTo} />)}
     </Wrapper>
 )
 
 Gallery.propTypes = {
     products: PropTypes.arrayOf(
         PropTypes.shape(ProductProps)
-    ).isRequired
+    ).isRequired,
+    linkTo: PropTypes.string
 }

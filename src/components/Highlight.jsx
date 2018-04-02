@@ -22,7 +22,7 @@ export const Highlight = ({ highlight, isActive, willBeActive }) => (
             willBeActive={willBeActive}
             header={highlight.header}
             description={highlight.description}
-            link={'link'} />
+            link={highlight.link} />
     </Image>
 )
 
@@ -30,6 +30,7 @@ export const HighlightProps = PropTypes.shape({
     description: PropTypes.string.isRequired,
     header: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
+    link: PropTypes.string,
 })
 
 Highlight.propTypes = {
