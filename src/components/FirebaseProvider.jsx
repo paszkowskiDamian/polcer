@@ -1,6 +1,8 @@
 import React, { PureComponent, createContext } from 'react'
 import { initializeApp, database } from 'firebase'
 
+import { Loader } from './Loader'
+
 const initialState = {
     isLoading: true,
     error: false,
@@ -42,8 +44,6 @@ export const FirebaseProvider = config => Component => class extends PureCompone
 }
 
 export const FirebaseConnect = (mapStoreToProps = ctx => ctx) => Component => (props) => {
-    const Loader = props.Loader ? props.Loader : () => <div>is Loading...</div>
-
     return (
         <FirebaseContext.Consumer>
             {(context) => !context.isLoading

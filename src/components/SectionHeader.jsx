@@ -6,7 +6,7 @@ import { HeadLine } from './HeadLine'
 import { mediaQueries } from '../styles'
 
 const Description = glamorous.p({
-    width: '40%',
+    width: '50%',
     minWidth: 320,
     textAlign: 'center',
     [mediaQueries.phone]: {

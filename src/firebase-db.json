@@ -1,0 +1,91 @@
+{
+    "about": [
+        {
+            "body": "Wychodząc naprzeciw oczekiwaniom naszych klientom, oferujemy bogatą ofertę gotowych wzorów kufli, butelek, kubków i urn. Każdy produkt może być indywidualnie zdobiony według potrzeb.",
+            "header": "Gotowe wzory"
+        },
+        {
+            "body": "Świadczymy kompleksową obsługę i fachową poradą w zakresie przygotowania produktu do realizacji.Przy zamówieniach indywidualnych, każda wycena jest przygotowana specjalnie dla danego zapytania. Staramy się zaproponować zawsze najbardziej korzystne ceny.",
+            "header": "Realizacja indywidualnych zamówień"
+        },
+        {
+            "body": "Posiadamy własną modelarnię w której wykonujemy modele i formy do własnej produkcji. Produkty tej kategorii są wykonywane również na indywidualne zamówienie.",
+            "header": "Formy gipsowe"
+        }
+    ],
+    "categories": [
+        {
+            "id": 0,
+            "image": "https://firebasestorage.googleapis.com/v0/b/polcer-page.appspot.com/o/products%2Furny_product.png?alt=media&token=944262c5-e28a-4e33-9bda-cb2816da0f95",
+            "name": "Urny"
+        },
+        {
+            "id": 1,
+            "image": "https://firebasestorage.googleapis.com/v0/b/polcer-page.appspot.com/o/highlights%2Fproduct_1.png?alt=media&token=3eb518d6-9ce1-41ed-9cfb-17a78868c42e",
+            "name": "Ceramika użytkowa"
+        },
+        {
+            "id": 2,
+            "image": "https://firebasestorage.googleapis.com/v0/b/polcer-page.appspot.com/o/products%2Fbutelka1.jpg?alt=media&token=c4a46669-1305-4f73-8da1-6db05f75740e",
+            "name": "Butelki"
+        }
+    ],
+    "highlights": [
+        {
+            "description": "W ofercie posiadamy przedmioty nadające się  w pełni do użytkowania w życiu codziennym. W naszej ofercie znajdują się naczynia ceramiczne w różnych pojemnościach. Wyroby ceramiczne są idealne dla osób cenionych tradycyjny smak.",
+            "header": "Ceramika użytkowa",
+            "image": "https://firebasestorage.googleapis.com/v0/b/polcer-page.appspot.com/o/highlights%2Fheader_1.png?alt=media&token=ece655dc-adcd-449e-a39c-d268ffbe459a",
+            "link": "Ceramika użytkowa"
+        },
+        {
+            "description": "Urny ceramiczne to orginalne wzory, do produkcji których używane są naturalne surowce.",
+            "header": "Urny",
+            "image": "https://firebasestorage.googleapis.com/v0/b/polcer-page.appspot.com/o/highlights%2Fheader_2.png?alt=media&token=4f3359c8-3970-43b3-a760-3f95bb3bf1d5",
+            "link": "urny"
+        },
+        {
+            "description": "Butelka ceramiczna dedykowana do nalewek, wina, miodu pitnego, oleju, oliwy oraz alkoholu wysokoprocentowych.",
+            "header": "Butelki",
+            "image": "https://firebasestorage.googleapis.com/v0/b/polcer-page.appspot.com/o/highlights%2FUntitled-1.png?alt=media&token=7530e3bb-80b4-4f2e-8e6e-830a4a0fae08",
+            "link": "butelki"
+        }
+    ],
+    "products": [
+        {
+            "categoryId": 0,
+            "id": 0,
+            "image": "https://firebasestorage.googleapis.com/v0/b/polcer-page.appspot.com/o/products%2FBez%20nazwy-10.jpg?alt=media&token=470f50a7-02ac-4ba0-a7f9-c0b662712db6",
+            "name": "Urna kula"
+        },
+        {
+            "categoryId": 2,
+            "id": 1,
+            "image": "https://firebasestorage.googleapis.com/v0/b/polcer-page.appspot.com/o/products%2Fbutelka.jpg?alt=media&token=3841c226-0c77-4556-b842-e004935d5f32",
+            "name": "Butelka 1"
+        },
+        {
+            "categoryId": 2,
+            "id": 2,
+            "image": "https://firebasestorage.googleapis.com/v0/b/polcer-page.appspot.com/o/products%2Fbutelka1.jpg?alt=media&token=c4a46669-1305-4f73-8da1-6db05f75740e",
+            "name": "Butelka 2"
+        },
+        {
+            "categoryId": 2,
+            "id": 3,
+            "image": "https://firebasestorage.googleapis.com/v0/b/polcer-page.appspot.com/o/products%2Fgo%CC%81rnik.jpg?alt=media&token=7eeef2d4-301e-4f7d-9832-9fa3496958f3",
+            "name": "Butelka górnik"
+        },
+        {
+            "categoryId": 0,
+            "id": 4,
+            "image": "https://firebasestorage.googleapis.com/v0/b/polcer-page.appspot.com/o/products%2Furana%20srednia%20bez.jpg?alt=media&token=014c288e-929f-4ad0-b083-70542f82a787",
+            "name": "Urna średnia"
+        },
+        {
+            "categoryId": 0,
+            "id": 5,
+            "image": "https://firebasestorage.googleapis.com/v0/b/polcer-page.appspot.com/o/products%2Furny_product.png?alt=media&token=944262c5-e28a-4e33-9bda-cb2816da0f95",
+            "name": "Urna"
+        }
+    ]
+}

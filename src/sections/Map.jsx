@@ -52,7 +52,7 @@ const Card = glamorous.div({
 export const Map = ({ id }) => (
     <Wrapper id={id}>
         <MapComponent
-            googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+            googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyBFQfQ5ye7QGCPwdxQdDMk-dXuNKxXDXBg"
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={<div style={{ height: `500px` }} />}
             mapElement={<div style={{ height: `100%` }} />} />

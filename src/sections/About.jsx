@@ -2,10 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import glamorous from 'glamorous'
 
-import { Offer } from '../components/Offer'
+import { Offer, OfferProp } from '../components/Offer'
 import { SectionHeader } from '../components/SectionHeader'
 import { SectionWrapper } from '../components/SectionWrapper'
 import { mediaQueries } from '../styles'
+
+import { ABOUT } from '../content'
 
 const OfferWrapper = glamorous.div({
     display: 'flex',
@@ -15,16 +17,22 @@ const OfferWrapper = glamorous.div({
     },
 })
 
+const iconTypes = [
+    'folder',
+    'edit',
+    'api',
+]
+
 export const About = ({ about, id }) => (
     <SectionWrapper id={id}>
-        <SectionHeader title="Oferta" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, eos repellendus ad iure consequatur maxime beatae, iusto nostrum debitis praesentium commodi animi corporis nulla voluptatum quibusdam perspiciatis soluta amet sint?" />
+        <SectionHeader title="O firmie" description={ABOUT} />
         <OfferWrapper>
-            {about.map((description, i) => <Offer key={i} description={description} />)}
+            {about.map((description, i) => <Offer key={i} description={description} type={iconTypes[i]} />)}
         </OfferWrapper>
     </SectionWrapper>
 )
 
 About.propTypes = {
-    about: PropTypes.arrayOf(PropTypes.string).isRequired,
+    about: PropTypes.arrayOf(OfferProp).isRequired,
     id: PropTypes.string,
 }

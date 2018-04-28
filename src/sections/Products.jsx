@@ -5,12 +5,11 @@ import { SectionHeader } from '../components/SectionHeader'
 import { SectionWrapper } from '../components/SectionWrapper'
 import { ProductProps } from '../components/Product'
 import { Gallery } from '../components/Gallery'
-
-
+import { PRODUCTS } from '../content'
 
 export const Products = ({ products, id }) => (
     <SectionWrapper id={id}>
-        <SectionHeader title="produkty" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias vel ab quo mollitia vitae fugiat odit placeat voluptatibus culpa aperiam quaerat reiciendis expedita iusto laboriosam, tempore laborum sint dicta? Quasi!" />
+        <SectionHeader title="produkty" description={PRODUCTS} />
         <Gallery products={products} linkTo="kategoria" />
     </SectionWrapper>
 )

@@ -24,8 +24,8 @@ export class Header extends Component {
                     lazyLoad={'progressive'}
                     // effect="fade" //does not work properly
                     autoplay
-                    autoplaySpeed={5000}
-                    speed={2000}>
+                    autoplaySpeed={4000}
+                    speed={2500}>
                     {this.props.highlights.map((highlight, i) => (
                         <div key={highlight.header}>
                             <Highlight

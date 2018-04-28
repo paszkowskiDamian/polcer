@@ -2,44 +2,44 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import glamorous from 'glamorous'
 
-import { style, mediaQueries } from '../styles'
+import { Badge } from './Badge'
+import { Description } from './Description'
+import { mediaQueries } from '../styles'
 
 const Wrapper = glamorous.div({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    padding: '0 15px',
+    margin: '0 15px',
     '&:first-child': {
-        paddingLeft: 0,
+        marginLeft: 0,
     },
     '&:last-child': {
-        paddingRight: 0,
+        marginRight: 0,
     },
     [mediaQueries.tablet]: {
-        padding: 0,
+        margin: 0,
     }
 })
 
-const Badge = glamorous.div({
-    margin: 20,
-    width: 70,
-    height: 70,
-    background: style.colors.lightGray,
-    borderRadius: '50%',
-})
-
-
-const Description = glamorous.p({
+const Body = glamorous.p({
     textAlign: 'center'
 })
 
-export const Offer = ({ description }) => (
+export const Offer = ({ description, type }) => (
     <Wrapper>
-        <Badge />
-        <Description>{description}</Description>
+        <Badge type={type} />
+        <Description>{description.header}</Description>
+        <Body>{description.body}</Body>
     </Wrapper>
 )
 
+export const OfferProp = PropTypes.shape({
+    header: PropTypes.string.isRequired,
+    body: PropTypes.string.isRequired,
+}).isRequired
+
 Offer.propTypes = {
-    description: PropTypes.string.isRequired
+    description: OfferProp,
+    type: PropTypes.string,
 }

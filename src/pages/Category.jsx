@@ -21,7 +21,7 @@ class CategoryComponent extends Component {
     }
 
     static deriveProductsToShow(products, categoryId) {
-        return products.filter(product => product.id === categoryId)
+        return products.filter(product => product.categoryId === categoryId)
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
